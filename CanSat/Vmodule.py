@@ -3,7 +3,7 @@ from csv import reader
 class Vmodule:
 
     def __init__(self, path):
-        self.config_path = './' + path + '.conf'
+        self.config_path = './' + path + '.csv'
         self.process = 0
         self.data_set = [0,0,0]
 
