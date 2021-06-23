@@ -5,7 +5,7 @@ class Vmodule:
     def __init__(self, path):
         self.config_path = './' + path + '.conf'
         self.process = 0
-        self.data_set = [0.0,0.0]
+        self.data_set = [0,0,0]
 
         #csv to list
         with open(self.config_path, 'r') as csv_file:
@@ -24,4 +24,13 @@ class Vmodule:
     
     def getLongitude(self):
         return self.data_set[1]
+
+    def getX(self):
+        return self.data_set[0]
+
+    def getY(self):
+        return self.data_set[1]
+    
+    def getZ(self):
+        return self.data_set[2]
 
