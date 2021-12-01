@@ -6,8 +6,7 @@ class Vmodule:
     def __init__(self, path):
         self.config_path = './' + path + '.csv'
         self.process = 0
-        self.data_set = [0,0,0,0,0]
-        self.old_data_set = [0,0,0,0,0]
+        self.data_set = [0,0,0,0,0,0]
         self.goal = [41.833705, 140.770666]
 
         #csv to list
@@ -21,7 +20,6 @@ class Vmodule:
             print("error: please input number, that greater than 1")
         self.process += int(n)
         
-
     def getLatitude(self):
         return self.data_set[0]
     
@@ -36,16 +34,6 @@ class Vmodule:
     
     def getZ(self):
         return self.data_set[4]
-
-    def getLet(self):
-        dis_now_x = int(self.old_data_set[0]) - int(self.data_set[0])
-        dis_now_y = int(self.old_data_set[1]) - int(self.data_set[1])
-        dis_goal_x = int(self.goal[0]) - int(self.data_set[0])
-        dis_goal_y = int(self.goal[1]) - int(self.data_set[1])
-        asin_now = math.degrees(math.atan2(dis_now_y, dis_now_x))
-        asin_goal = math.degrees(math.atan2(dis_goal_y, dis_goal_x))
-        let = asin_goal - asin_now 
-        return let
     
-    def volt(self):
-        self.old_data_set = self.data_set
+    def getMagnet(self):
+        return self.data_set[5]
