@@ -6,7 +6,9 @@ class Vmodule:
     def __init__(self, path):
         self.config_path = './' + path + '.csv'
         self.process = 0
-        self.data_set = [0,0,0]
+        self.data_set = [0,0,0,0,0]
+        self.old_data_set = [0,0,0,0,0]
+        self.goal = [41.833705, 140.770666]
 
         #csv to list
         with open(self.config_path, 'r') as csv_file:
@@ -27,13 +29,13 @@ class Vmodule:
         return self.data_set[1]
 
     def getX(self):
-        return self.data_set[0]
+        return self.data_set[2]
 
     def getY(self):
-        return self.data_set[1]
+        return self.data_set[3]
     
     def getZ(self):
-        return self.data_set[2]
+        return self.data_set[4]
 
     def getLet(self):
         dis_now_x = int(self.old_data_set[0]) - int(self.data_set[0])
