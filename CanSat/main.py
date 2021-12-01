@@ -1,8 +1,9 @@
 import Vmodule
 
 gps = Vmodule.Vmodule('gps')
-acc = Vmodule.Vmodule('acceleration')
 
 gps.step(1)
+gps.volt()
 gps.step(1)
-
+print(gps.getLet())
+gps.volt()
