@@ -1,6 +1,8 @@
 import Vmodule
 
-gps = Vmodule.Vmodule('gps')
+sensor = Vmodule.Vmodule('gps',True)
 
-gps.step(1)
-gps.step(1)
+i = 0
+while i < 10:
+    print(sensor.get_acc())
+    i += 1

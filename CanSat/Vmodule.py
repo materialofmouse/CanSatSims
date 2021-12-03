@@ -1,7 +1,9 @@
 from csv import reader
+from gps import GPS
+from sensor import Sensor
 import math
 
-class Vmodule:
+class Vmodule(GPS, Sensor):
 
     def __init__(self, path, is_auto_step):
         self.config_path = './' + path + '.csv'
@@ -25,41 +27,3 @@ class Vmodule:
             self.process += int(n)
         else:
             self.process = 0
-
-    def get_data(self):
-        if self.is_auto_step:
-            self.step(1)
-        return self.data_set
-
-    def get_acc(self):
-        if self.is_auto_step:
-            self.step(1)
-        return self.data_set
-
-    def get_gyro(self):
-        if self.is_auto_step:
-            self.step(1)
-        return self.data_set
-
-    def get_mag(self):
-        if self.is_auto_step:
-            self.step(1)
-        return self.data_set
-        
-    def getLatitude(self):
-        return self.data_set[0]
-    
-    def getLongitude(self):
-        return self.data_set[1]
-
-    def getX(self):
-        return self.data_set[2]
-
-    def getY(self):
-        return self.data_set[3]
-    
-    def getZ(self):
-        return self.data_set[4]
-    
-    def getMagnet(self):
-        return self.data_set[5]
