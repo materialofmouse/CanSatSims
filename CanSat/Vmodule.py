@@ -8,7 +8,6 @@ class Vmodule(GPS, Sensor):
     def __init__(self, path, is_auto_step):
         self.config_path = './' + path + '.csv'
         self.process = 0
-        self.data_set = [0,0,0,0,0,0]
         self.goal = [41.833705, 140.770666]
         self.is_auto_step = is_auto_step
 
